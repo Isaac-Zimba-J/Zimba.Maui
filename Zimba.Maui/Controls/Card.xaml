@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Border xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="Zimba.Maui.Controls.Card"
+        x:Name="this"
+        BackgroundColor="{DynamicResource CardBackgroundColor}"
+        Stroke="{DynamicResource CardBorderColor}"
+        StrokeThickness="1"
+        StrokeShape="RoundRectangle 10">
+    <Border.Shadow>
+        <Shadow Brush="Black"
+                Offset="2,3"
+                Radius="5"
+                Opacity="0.2" />
+    </Border.Shadow>
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- Title Section -->
+        <Border x:Name="TitleSection"
+                Grid.Row="0"
+                Padding="16"
+                IsVisible="{Binding Source={x:Reference this}, Path=ShowTitleSection}"
+                BackgroundColor="{DynamicResource CardTitleBackgroundColor}"
+                StrokeShape="RoundRectangle 10,10,0,0">
+            <Label Text="{Binding Source={x:Reference this}, Path=Title}"
+                   FontSize="{Binding Source={x:Reference this}, Path=TitleFontSize}"
+                   FontAttributes="Bold"
+                   TextColor="{DynamicResource CardTitleTextColor}" />
+        </Border>
+        <!-- Content Section -->
+        <ContentView Grid.Row="1"
+                     Padding="16"
+                     Content="{Binding Source={x:Reference this}, Path=Content}" />
+        <!-- Footer Section -->
+        <Border x:Name="FooterSection"
+                Grid.Row="2"
+                Padding="16"
+                IsVisible="{Binding Source={x:Reference this}, Path=ShowFooterSection}"
+                BackgroundColor="{DynamicResource CardFooterBackgroundColor}"
+                StrokeShape="RoundRectangle 0,0,10,10">
+            <ContentView Content="{Binding Source={x:Reference this}, Path=Footer}" />
+        </Border>
+    </Grid>
+</Border>

@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <Button xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Zimba.Maui.Controls.FAB"  
-             FontSize="24"
-             Text="+"
-             FontAttributes="Bold"
-             TextColor="{DynamicResource FabTextColor}" 
-             BackgroundColor="{DynamicResource FabBackgroundColor}"
-             CornerRadius="25"
-             HeightRequest="50"
-             WidthRequest="50"
-             VerticalOptions="End"
-             HorizontalOptions="End"
-             Margin="30">
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="Zimba.Maui.Controls.FAB"
+        FontSize="24"
+        Text="+"
+        FontAttributes="Bold"
+        TextColor="{DynamicResource FabTextColor}"
+        BackgroundColor="{DynamicResource FabBackgroundColor}"
+        CornerRadius="25"
+        HeightRequest="50"
+        WidthRequest="50"
+        VerticalOptions="End"
+        HorizontalOptions="End"
+        Margin="30">
     <Button.Shadow>
         <Shadow Brush="Black"
                 Offset="5,10"

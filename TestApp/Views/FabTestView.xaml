@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zimba="clr-namespace:Zimba.Maui.Controls;assembly=Zimba.Maui"
+             x:Class="TestApp.Views.FabTestView"
+             Title="FAB Test">
+    <Grid>
+        <StackLayout Padding="20">
+            <Label Text="Testing Floating Action Button" FontSize="20" FontAttributes="Bold" Margin="0,0,0,20"/>
+            <Label Text="The FAB should appear in the bottom right corner" />
+        </StackLayout>
+        
+        <!-- Test default FAB -->
+        <zimba:FAB />
+        
+        <!-- Test custom FAB (position in different location) -->
+        <zimba:FAB Text="🔍" 
+                   BackgroundColor="Orange"
+                   HorizontalOptions="Start"
+                   VerticalOptions="End" 
+        />
+    </Grid>
+</ContentPage>

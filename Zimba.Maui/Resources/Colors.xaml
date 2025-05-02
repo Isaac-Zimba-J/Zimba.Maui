@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-                    x:Class="Zimba.Maui.Controls.Resources.Colors">
-    <!-- Default colors -->
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <!-- FAB colors -->
     <Color x:Key="FabBackgroundColor">#512BD4</Color>
     <Color x:Key="FabTextColor">White</Color>
+    
+    <!-- Card colors -->
+    <Color x:Key="CardBackgroundColor">White</Color>
+    <Color x:Key="CardBorderColor">#E0E0E0</Color>
+    <Color x:Key="CardTitleBackgroundColor">#F5F5F5</Color>
+    <Color x:Key="CardTitleTextColor">#212121</Color>
+    <Color x:Key="CardFooterBackgroundColor">#F5F5F5</Color>
+    
+    <!-- Dark theme colors -->
+    <Color x:Key="CardBackgroundColorDark">#2D2D2D</Color>
+    <Color x:Key="CardBorderColorDark">#3F3F3F</Color>
+    <Color x:Key="CardTitleBackgroundColorDark">#3F3F3F</Color>
+    <Color x:Key="CardTitleTextColorDark">#FFFFFF</Color>
+    <Color x:Key="CardFooterBackgroundColorDark">#3F3F3F</Color>
 </ResourceDictionary>

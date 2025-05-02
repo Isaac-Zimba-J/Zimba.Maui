@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestApp.Views.CardTestView"
+             xmlns:zimba="clr-namespace:Zimba.Maui.Controls;assembly=Zimba.Maui"
+             Title="Card Test">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <Label Text="Testing Card Control" FontSize="20" FontAttributes="Bold" Margin="0,0,0,20"/>
+            
+            <!-- Test basic card -->
+            <zimba:Card Title="Basic Card">
+                <zimba:Card.Content>
+                    <Label Text="This is a basic card with just title and content." />
+                </zimba:Card.Content>
+            </zimba:Card>
+            
+            <!-- Test card with footer -->
+            <zimba:Card Title="Card with Footer" ShowFooterSection="True">
+                <zimba:Card.Content>
+                    <Label Text="This card has a footer section" />
+                </zimba:Card.Content>
+                <zimba:Card.Footer>
+                    <Button Text="Action Button" />
+                </zimba:Card.Footer>
+            </zimba:Card>
+            
+            <!-- Test customized card -->
+            <zimba:Card Title="Customized Card" 
+                       CardCornerRadius="20"
+                       HasShadow="True"
+                       ShadowRadius="15"
+                       ShadowOpacity="0.5"
+                       ShadowOffset="5,8"
+                       StrokeThickness="2"
+                       BackgroundColor="LightYellow"
+                       ShowFooterSection="True">
+                <zimba:Card.Content>
+                    <StackLayout>
+                        <Label Text="This card has custom styling" />
+                        <Entry Placeholder="Try interacting with controls inside" />
+                        <Slider />
+                    </StackLayout>
+                </zimba:Card.Content>
+                <zimba:Card.Footer>
+                    <HorizontalStackLayout HorizontalOptions="End" Spacing="10">
+                        <Button Text="Cancel" BackgroundColor="LightGray" />
+                        <Button Text="OK" />
+                    </HorizontalStackLayout>
+                </zimba:Card.Footer>
+            </zimba:Card>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
