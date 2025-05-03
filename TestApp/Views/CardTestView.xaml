@@ -3,50 +3,75 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TestApp.Views.CardTestView"
              xmlns:zimba="clr-namespace:Zimba.Maui.Controls;assembly=Zimba.Maui"
-             Title="Card Test">
+             BackgroundColor="#F5F5F5"
+             Title="UI Cards">
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="20">
-            <Label Text="Testing Card Control" FontSize="20" FontAttributes="Bold" Margin="0,0,0,20"/>
-            
-            <!-- Test basic card -->
-            <zimba:Card Title="Basic Card">
-                <zimba:Card.Content>
-                    <Label Text="This is a basic card with just title and content." />
-                </zimba:Card.Content>
+        <VerticalStackLayout Padding="16"
+                             Spacing="24">
+            <!-- Minimal Card with Shadow -->
+            <zimba:Card Title="Simple Card"
+                        CardCornerRadius="8"
+                        HasShadow="True"
+                        Elevation="1"
+                        ShowTitleSection="False"
+                        BackgroundColor="White">
+                <zimba:Card.CardContent>
+                    <Label Text="This is a simple card style."
+                           FontSize="16"
+                           TextColor="#444444" />
+                </zimba:Card.CardContent>
             </zimba:Card>
             
-            <!-- Test card with footer -->
-            <zimba:Card Title="Card with Footer" ShowFooterSection="True">
-                <zimba:Card.Content>
-                    <Label Text="This card has a footer section" />
-                </zimba:Card.Content>
+            <!-- Card with Footer Action -->
+            <zimba:Card Title="Action Required"
+                        CardCornerRadius="12"
+                        HasShadow="True"
+                        BackgroundColor="White"
+                        ShadowRadius="10"
+                        ShadowOpacity="0.3"
+                        ShadowOffset="0,4"
+                        ShowFooterSection="True"
+                        StrokeThickness="0">
+                <zimba:Card.CardContent>
+                    <Label Text="Please confirm your action below."
+                           FontSize="16"
+                           TextColor="#444444" />
+                </zimba:Card.CardContent>
                 <zimba:Card.Footer>
-                    <Button Text="Action Button" />
+                    <HorizontalStackLayout HorizontalOptions="End"
+                                           Spacing="12">
+                        <Button Text="Cancel"
+                                BackgroundColor="#E0E0E0"
+                                TextColor="#333" />
+                        <Button Text="Confirm"
+                                BackgroundColor="#1976D2"
+                                TextColor="White" />
+                    </HorizontalStackLayout>
                 </zimba:Card.Footer>
             </zimba:Card>
             
-            <!-- Test customized card -->
-            <zimba:Card Title="Customized Card" 
-                       CardCornerRadius="20"
-                       HasShadow="True"
-                       ShadowRadius="15"
-                       ShadowOpacity="0.5"
-                       ShadowOffset="5,8"
-                       StrokeThickness="2"
-                       BackgroundColor="LightYellow"
-                       ShowFooterSection="True">
-                <zimba:Card.Content>
-                    <StackLayout>
-                        <Label Text="This card has custom styling" />
-                        <Entry Placeholder="Try interacting with controls inside" />
-                        <Slider />
-                    </StackLayout>
-                </zimba:Card.Content>
+            <!-- Interactive Card -->
+            <zimba:Card Title="Feedback Form"
+                        CardCornerRadius="12"
+                        HasShadow="True"
+                        BackgroundColor="White"
+                        ShadowRadius="12"
+                        ShadowOpacity="0.3"
+                        ShadowOffset="0,6"
+                        ShowFooterSection="True"
+                        StrokeThickness="0">
+                <zimba:Card.CardContent>
+                    <VerticalStackLayout Spacing="12">
+                        <Entry Placeholder="Your name" />
+                        <Editor Placeholder="Write your feedback here..."
+                                HeightRequest="120" />
+                    </VerticalStackLayout>
+                </zimba:Card.CardContent>
                 <zimba:Card.Footer>
-                    <HorizontalStackLayout HorizontalOptions="End" Spacing="10">
-                        <Button Text="Cancel" BackgroundColor="LightGray" />
-                        <Button Text="OK" />
-                    </HorizontalStackLayout>
+                    <Button Text="Submit"
+                            BackgroundColor="#43A047"
+                            TextColor="White"
+                            HorizontalOptions="End" />
                 </zimba:Card.Footer>
             </zimba:Card>
         </VerticalStackLayout>

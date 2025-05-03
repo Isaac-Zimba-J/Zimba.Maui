@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using DotNet.Meteor.HotReload.Plugin;
 using Zimba.Maui;
 
 namespace TestApp;
@@ -11,15 +12,20 @@ public static class MauiProgram
         builder
             .UseMauiApp<App>()
             .UseZimbaMaui()
+#if DEBUG
+            .EnableHotReload()
+#endif
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
 
+
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
+
 
         return builder.Build();
     }

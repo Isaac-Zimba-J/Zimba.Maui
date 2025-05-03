@@ -25,7 +25,7 @@ namespace Zimba.Maui.Controls
 		}
 
 		public static readonly BindableProperty TitleFontSizeProperty =
-			BindableProperty.Create(nameof(TitleFontSize), typeof(double), typeof(Card), 18.0);
+			BindableProperty.Create(nameof(TitleFontSize), typeof(double), typeof(Card), 12.0);
 
 		public double TitleFontSize
 		{
@@ -35,21 +35,23 @@ namespace Zimba.Maui.Controls
 
 		public static readonly BindableProperty ShowTitleSectionProperty =
 			BindableProperty.Create(nameof(ShowTitleSection), typeof(bool), typeof(Card), true);
-
+		
 		public bool ShowTitleSection
 		{
 			get => (bool)GetValue(ShowTitleSectionProperty);
 			set => SetValue(ShowTitleSectionProperty, value);
 		}
+		
+	
+		public static readonly BindableProperty CardContentProperty =
+			BindableProperty.Create(nameof(CardContent), typeof(View), typeof(Card), null);
 
-		public static new readonly BindableProperty ContentProperty =
-			BindableProperty.Create(nameof(Content), typeof(View), typeof(Card), null);
-
-		public new View Content
+		public View CardContent
 		{
-			get => (View)GetValue(ContentProperty);
-			set => SetValue(ContentProperty, value);
+			get => (View)GetValue(CardContentProperty);
+			set => SetValue(CardContentProperty, value);
 		}
+
 
 		public static readonly BindableProperty FooterProperty =
 			BindableProperty.Create(nameof(Footer), typeof(View), typeof(Card), null);
@@ -70,7 +72,7 @@ namespace Zimba.Maui.Controls
 		}
 
 		public static readonly BindableProperty CardCornerRadiusProperty =
-			BindableProperty.Create(nameof(CardCornerRadius), typeof(double), typeof(Card), 10.0,
+			BindableProperty.Create(nameof(CardCornerRadius), typeof(double), typeof(Card), 8.0,
 				propertyChanged: OnCardCornerRadiusChanged);
 
 		public double CardCornerRadius
@@ -118,6 +120,46 @@ namespace Zimba.Maui.Controls
 			get => (float)GetValue(ShadowOpacityProperty);
 			set => SetValue(ShadowOpacityProperty, value);
 		}
+		
+		public static readonly BindableProperty ElevationProperty =
+			BindableProperty.Create(nameof(Elevation), typeof(double), typeof(Card), 2.0,
+				propertyChanged: OnShadowGeometryChanged);
+
+		public double Elevation
+		{
+			get => (double)GetValue(ElevationProperty);
+			set => SetValue(ElevationProperty, value);
+		}
+		public static readonly BindableProperty ShadowAngleProperty =
+			BindableProperty.Create(nameof(ShadowAngle), typeof(double), typeof(Card), 90.0,
+				propertyChanged: OnShadowGeometryChanged);
+
+		public double ShadowAngle
+		{
+			get => (double)GetValue(ShadowAngleProperty);
+			set => SetValue(ShadowAngleProperty, value);
+		}
+		private static void OnShadowGeometryChanged(BindableObject bindable, object oldValue, object newValue)
+		{
+			if (bindable is Card card && card.HasShadow)
+			{
+				double radians = card.ShadowAngle * Math.PI / 180;
+				var dx = Math.Cos(radians) * card.Elevation;
+				var dy = Math.Sin(radians) * card.Elevation;
+
+				card.ShadowOffset = new Point(dx, dy);
+
+				card.Shadow = new Shadow
+				{
+					Brush = Brush.Black,
+					Offset = card.ShadowOffset,
+					Radius = card.ShadowRadius,
+					Opacity = card.ShadowOpacity
+				};
+			}
+		}
+
+
 
 		#endregion
 

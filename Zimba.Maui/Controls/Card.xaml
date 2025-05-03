@@ -18,25 +18,26 @@
         <Border x:Name="TitleSection"
                 Grid.Row="0"
                 Padding="16"
+                StrokeThickness="0"
                 IsVisible="{Binding Source={x:Reference this}, Path=ShowTitleSection}"
-                BackgroundColor="{DynamicResource CardTitleBackgroundColor}"
-                StrokeShape="RoundRectangle 10,10,0,0">
+                BackgroundColor="{DynamicResource CardTitleBackgroundColor}">
             <Label Text="{Binding Source={x:Reference this}, Path=Title}"
                    FontSize="{Binding Source={x:Reference this}, Path=TitleFontSize}"
                    FontAttributes="Bold"
                    TextColor="{DynamicResource CardTitleTextColor}" />
         </Border>
+        
         <!-- Content Section -->
         <ContentView Grid.Row="1"
                      Padding="16"
-                     Content="{Binding Source={x:Reference this}, Path=Content}" />
+                     Content="{Binding Source={x:Reference this}, Path=CardContent}" />
+
         <!-- Footer Section -->
         <Border x:Name="FooterSection"
                 Grid.Row="2"
                 Padding="16"
                 IsVisible="{Binding Source={x:Reference this}, Path=ShowFooterSection}"
-                BackgroundColor="{DynamicResource CardFooterBackgroundColor}"
-                StrokeShape="RoundRectangle 0,0,10,10">
+                BackgroundColor="{DynamicResource CardFooterBackgroundColor}">
             <ContentView Content="{Binding Source={x:Reference this}, Path=Footer}" />
         </Border>
     </Grid>
