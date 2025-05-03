@@ -17,7 +17,7 @@
         <!-- Title Section -->
         <Border x:Name="TitleSection"
                 Grid.Row="0"
-                Padding="16"
+                Padding="10"
                 StrokeThickness="0"
                 IsVisible="{Binding Source={x:Reference this}, Path=ShowTitleSection}"
                 BackgroundColor="{DynamicResource CardTitleBackgroundColor}">
@@ -29,13 +29,14 @@
         
         <!-- Content Section -->
         <ContentView Grid.Row="1"
-                     Padding="16"
+                     Padding="10"
                      Content="{Binding Source={x:Reference this}, Path=CardContent}" />
 
         <!-- Footer Section -->
         <Border x:Name="FooterSection"
                 Grid.Row="2"
-                Padding="16"
+                Padding="10"
+                StrokeThickness="0"
                 IsVisible="{Binding Source={x:Reference this}, Path=ShowFooterSection}"
                 BackgroundColor="{DynamicResource CardFooterBackgroundColor}">
             <ContentView Content="{Binding Source={x:Reference this}, Path=Footer}" />

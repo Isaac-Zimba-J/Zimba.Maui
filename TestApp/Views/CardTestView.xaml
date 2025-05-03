@@ -21,7 +21,6 @@
                            TextColor="#444444" />
                 </zimba:Card.CardContent>
             </zimba:Card>
-            
             <!-- Card with Footer Action -->
             <zimba:Card Title="Action Required"
                         CardCornerRadius="12"
@@ -35,6 +34,7 @@
                 <zimba:Card.CardContent>
                     <Label Text="Please confirm your action below."
                            FontSize="16"
+                           Padding="0"
                            TextColor="#444444" />
                 </zimba:Card.CardContent>
                 <zimba:Card.Footer>
@@ -49,7 +49,6 @@
                     </HorizontalStackLayout>
                 </zimba:Card.Footer>
             </zimba:Card>
-            
             <!-- Interactive Card -->
             <zimba:Card Title="Feedback Form"
                         CardCornerRadius="12"
@@ -63,7 +62,8 @@
                 <zimba:Card.CardContent>
                     <VerticalStackLayout Spacing="12">
                         <Entry Placeholder="Your name" />
-                        <Editor Placeholder="Write your feedback here..."
+                        <Editor Background="AliceBlue"
+                                Placeholder="Write your feedback here..."
                                 HeightRequest="120" />
                     </VerticalStackLayout>
                 </zimba:Card.CardContent>
