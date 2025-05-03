@@ -42,7 +42,7 @@ namespace Zimba.Maui.Controls
 			set => SetValue(ShowTitleSectionProperty, value);
 		}
 
-		public static readonly BindableProperty ContentProperty =
+		public static new readonly BindableProperty ContentProperty =
 			BindableProperty.Create(nameof(Content), typeof(View), typeof(Card), null);
 
 		public new View Content

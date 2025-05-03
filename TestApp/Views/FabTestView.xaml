@@ -6,18 +6,18 @@
              Title="FAB Test">
     <Grid>
         <StackLayout Padding="20">
-            <Label Text="Testing Floating Action Button" FontSize="20" FontAttributes="Bold" Margin="0,0,0,20"/>
+            <Label Text="Testing Floating Action Button"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   Margin="0,0,0,20" />
             <Label Text="The FAB should appear in the bottom right corner" />
         </StackLayout>
-        
         <!-- Test default FAB -->
-        <zimba:FAB />
-        
+        <zimba:FAB BackgroundColor="Black" />
         <!-- Test custom FAB (position in different location) -->
-        <zimba:FAB Text="🔍" 
+        <zimba:FAB Text="🔍"
                    BackgroundColor="Orange"
                    HorizontalOptions="Start"
-                   VerticalOptions="End" 
-        />
+                   VerticalOptions="End" />
     </Grid>
 </ContentPage>
