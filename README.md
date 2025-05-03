@@ -1,16 +1,32 @@
-# Zimba.Maui.Controls
+# Zimba.Maui
 
-Zimba.Maui.Controls is a custom UI component library for .NET MAUI, designed to simplify and enrich the development of cross-platform apps. It currently features a customizable `Card` control with support for shadows, titles, footers, and dynamic content.
+Zimba.Maui is a custom UI component library for .NET MAUI, designed to simplify and enrich the development of cross-platform apps. It currently features:
+
+- A customizable `Card` control with support for shadows, titles, footers, and dynamic content.
+- A `Floating Action Button (FAB)` for quick actions with customizable icons, colors, and animations.
 
 ## ✨ Features
 
-- Customizable Card with:
-  - Title and footer sections
-  - Adjustable shadows and elevation
-  - Rounded corners
-  - Bindable content areas
-- Clean and extendable architecture
-- Works across iOS, macOS Catalyst, Android, and Windows
+### Card Control
+
+![Card Control Example](Assets/card.png)
+
+The `Card` control supports:
+
+- Title and footer sections
+- Adjustable shadows and elevation
+- Rounded corners
+- Bindable content areas
+
+### Floating Action Button (FAB)
+
+![FAB Example](Assets/fab.png)
+
+The `Floating Action Button (FAB)` supports:
+
+- Customizable icons and colors
+- Smooth animations
+- Support for click events
 
 ## 📦 Installation
 
